@@ -2,20 +2,29 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const EXTERIOR_IMAGES: { src: string; label: string }[] = [
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/67623691-5f69-47f5-b1ed-7442ae18841c.jpg", label: "Бежевая обшивка · Вид спереди" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/181c0209-6090-4421-9ab0-ce25fae7d509.jpg", label: "Тёмный металл · Сосновый лес" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/a1df22e3-c8c1-4e37-9b68-8d4c71efe7b4.jpg", label: "Белая обшивка · Зима" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/ae263633-f9d3-47df-88d0-18f4cb79882f.jpg", label: "Кедр натуральный · Горный вид" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/214e2e00-5d1e-4c37-a03d-131d6c495d81.jpg", label: "Тёмно-зелёный · Осень" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/727b1628-a192-4257-a477-a017e635126c.jpg", label: "Оливковый · Горизонтальная обшивка" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/8c2dbf9d-60bc-49e2-9b75-2c73296c5d17.jpg", label: "Лесной зелёный · Вид сзади справа" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/5a4e3c0d-7c19-4076-9e76-de8c6f7a5bb3.jpg", label: "Бутылочный зелёный · Вертикальная доска" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/0c6b7603-0ce0-4fb2-b80c-6d4be683196a.jpg", label: "Тёмный хантер · Фиброцемент · Туман" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/2835533a-0b02-4697-ac1b-7aec9a4694a7.jpg", label: "Ночной вид · Тёмный зелёный" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/6c9f8337-ef1d-4c39-b042-0ceb8e5a5af7.jpg", label: "Шалфейный · Вид с высоты" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/8986ed14-3dac-4d12-bc0f-9955b7cadf31.jpg", label: "Зелёный · Крыльцо крупным планом" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/3c886016-9f99-4995-82d1-d47489de58ee.jpg", label: "Зелёный + чёрный двухтон · Снег" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/76d8941c-fe37-4a1f-965f-87e4b57c4458.jpg", label: "Военный олив · Рифлёный металл" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/331b9103-8d9c-4de9-887f-4287fd6d963d.jpg", label: "Тёмный зелёный + белый кант · Лето" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/066dd8c6-87f1-421d-87fd-f85f29456a9c.jpg", label: "Зелёная штукатурка · Скандинавия" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/f3d8ca0f-4d72-485a-966a-2e0b8c23cfc4.jpg", label: "Зелёный + серое дерево · Закат у озера" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/a18c809a-1392-45bd-9559-aa215fa0f90f.jpg", label: "Угольный зелёный · Пиленая доска · Дождь" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/8553aef6-37a9-48c3-b536-9f14003bbc2a.jpg", label: "Гоночный зелёный · Японский минимализм" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/8cf81e1f-d7ce-4c11-b6da-45f0654c195a.jpg", label: "Зелёный + выветренный кедр · Аэровид" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/72212611-f57b-477e-b8f0-a8d4d5b98244.jpg", label: "Тёмный зелёный · Вертикаль + снег" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/05cc5bd9-cd38-42d5-9992-7608263d2910.jpg", label: "Зелёный · Вечерние огни · Гирлянды" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/20014f3f-948c-48cb-adf8-490d7aeab597.jpg", label: "Зелёный + кортен сталь · Индастриал" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/14ef95a9-5b12-483c-b300-89a9e0c343c7.jpg", label: "Зелёный + серый кант · Дрон · Поле" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/785f912e-30c0-42f0-942a-0a88aa1fa151.jpg", label: "Приглушённый зелёный · Терракота · Осень" },
 ];
 
-const INTERIOR_IMAGES: { src: string; label: string }[] = [
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/2a8e0278-7b21-4aae-a457-6d089ef4f1fc.jpg", label: "Гостиная · Светлое дерево" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/3a0b753b-fc58-41df-acc5-31a7b35066de.jpg", label: "Спальная зона · Встроенная кровать" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/5334812a-d8d6-4907-991c-5d66031ca4df.jpg", label: "Санузел · Минимализм" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/e6d4ca0d-6528-47b2-bf3e-6bcd67024ffe.jpg", label: "Кухня-столовая · Компактная планировка" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/ff030351-49cd-4a10-9e0b-e7f5b9a12bee.jpg", label: "Гостиная · Уют с камином" },
-];
+const INTERIOR_IMAGES: { src: string; label: string }[] = [];
 
 type Tab = "exterior" | "interior";
 
@@ -71,12 +80,12 @@ export default function Gallery() {
                 border: "none",
                 borderRight: tab === "exterior" ? "var(--border)" : "none",
                 background: activeTab === tab ? "var(--dark)" : "white",
-                color: activeTab === tab ? "white" : "var(--dark)",
-                cursor: "pointer",
+                color: activeTab === tab ? "white" : tab === "interior" ? "#aaa" : "var(--dark)",
+                cursor: tab === "interior" ? "not-allowed" : "pointer",
                 transition: "all 0.15s",
               }}
             >
-              {tab === "exterior" ? "Экстерьер" : "Интерьер"}
+              {tab === "exterior" ? "Экстерьер" : "Интерьер · Скоро"}
             </button>
           ))}
         </div>
