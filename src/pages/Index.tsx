@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Index() {
   return (
     <>
@@ -8,7 +10,7 @@ export default function Index() {
         <nav>
           <a href="#">Модули</a>
           <a href="#">Комплектация</a>
-          <a href="#">Галерея</a>
+          <Link to="/gallery" style={{ color: "var(--primary)", fontWeight: 800 }}>Галерея</Link>
           <a href="#">Контакты</a>
         </nav>
         <button className="btn-cta">Получить КП</button>
