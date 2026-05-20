@@ -37,7 +37,7 @@ export default function Index() {
           <div
             className="hero-img"
             style={{
-              backgroundImage: `url("https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/4ac3a75c-6bf7-4ded-860f-7b1ae94332f4.jpg")`,
+              backgroundImage: `url("https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/3e31ef64-8848-4fee-b046-4f646bd5eefd.jpg")`,
             }}
           >
             <div className="sticker">
@@ -78,7 +78,7 @@ export default function Index() {
             <div className="menu-card">
               <span className="menu-tag">Хит продаж</span>
               <img
-                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/4ac3a75c-6bf7-4ded-860f-7b1ae94332f4.jpg"
+                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/3e31ef64-8848-4fee-b046-4f646bd5eefd.jpg"
                 alt="Тини хаус двускатный"
               />
               <div className="menu-card-body">
@@ -105,8 +105,8 @@ export default function Index() {
                 В комплекте
               </span>
               <img
-                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/99316378-040d-4069-a7ce-38c049be46b5.jpg"
-                alt="Мини энергоблок"
+                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/ca989f49-f180-4348-8ff1-b4acea5c0022.jpg"
+                alt="Тини хаус сбоку"
               />
               <div className="menu-card-body">
                 <div
@@ -132,7 +132,7 @@ export default function Index() {
                 Под ключ
               </span>
               <img
-                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/3984d260-72ce-4696-8342-077d254849c4.jpg"
+                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/87582658-bc6d-4ebd-8a12-07161bf3af6f.jpg"
                 alt="Интерьер тини хаус"
               />
               <div className="menu-card-body">
@@ -168,7 +168,7 @@ export default function Index() {
           <div
             className="vibe-img"
             style={{
-              backgroundImage: `url("https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/2d95f96d-28f5-4b6b-ba67-5eaea0b24b94.jpg")`,
+              backgroundImage: `url("https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/1d8de4df-79db-4b56-8bdf-23af1701e822.jpg")`,
             }}
           ></div>
         </section>
@@ -180,25 +180,25 @@ export default function Index() {
           <div className="social-grid">
             <div className="social-item">
               <img
-                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/4ac3a75c-6bf7-4ded-860f-7b1ae94332f4.jpg"
-                alt="Тини хаус снаружи"
+                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/3e31ef64-8848-4fee-b046-4f646bd5eefd.jpg"
+                alt="Тини хаус спереди"
               />
             </div>
             <div className="social-item">
               <img
-                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/3984d260-72ce-4696-8342-077d254849c4.jpg"
+                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/87582658-bc6d-4ebd-8a12-07161bf3af6f.jpg"
                 alt="Интерьер"
               />
             </div>
             <div className="social-item">
               <img
-                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/99316378-040d-4069-a7ce-38c049be46b5.jpg"
-                alt="Энергоблок"
+                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/ca989f49-f180-4348-8ff1-b4acea5c0022.jpg"
+                alt="Тини хаус сбоку"
               />
             </div>
             <div className="social-item">
               <img
-                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/2d95f96d-28f5-4b6b-ba67-5eaea0b24b94.jpg"
+                src="https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/1d8de4df-79db-4b56-8bdf-23af1701e822.jpg"
                 alt="Тини хаус в лесу"
               />
             </div>
