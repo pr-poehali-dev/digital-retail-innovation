@@ -2,29 +2,20 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const EXTERIOR_IMAGES: { src: string; label: string }[] = [
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/d889a955-bf52-4a31-b886-b4283e3cb09d.jpg", label: "Двутон · Горизонталь · Осенний лес" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/e9089876-2f30-474f-a0c0-7a5033c8ab65.jpg", label: "Двутон · Вид сзади · Берёзы" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/b07dcd82-ef3d-4579-91f5-6cc436486076.jpg", label: "Двутон · Крыльцо крупным планом · Клён" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/55b0946b-e753-4a23-83c4-4aab823376a9.jpg", label: "Двутон · Ночной вид · Гирлянды" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/dd4356fe-a919-49a7-a8f5-912393f17a3a.jpg", label: "Двутон · Снег · Хвойный лес" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/859e2ac7-f9ff-4c39-8dbb-3b9ddc19f053.jpg", label: "Двутон · Аэровид · Осеннее поле" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/6b2c59e3-1c3e-4219-97f8-cc9fcb1a2520.jpg", label: "Двутон · Навес сбоку · Терраса" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/61971609-74d8-439b-a219-1d99149317ca.jpg", label: "Двутон · Вертикальная доска · Дождь" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/5e6e7046-3d3c-4261-9a48-c827ae131bf7.jpg", label: "Двутон · Рифлёный металл · Сумерки" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/445ac619-7051-4bc6-b5a8-dd950779cfc2.jpg", label: "Двутон · Закат · Осень" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/68ff0d8d-0d30-4867-b2c5-de058d7a1926.jpg", label: "Двутон · Утренний туман · Сосны" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/b11532b2-f6ad-4e63-91d0-f5ab31613a56.jpg", label: "Двутон · Медные рамы · Утренняя роса" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/19d1fbf1-eca4-45a1-86a7-d3553d941f2a.jpg", label: "Двутон · Японский сад · Осень" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/407dd871-a1b3-48a5-85e9-6f0584e42bb2.jpg", label: "Двутон · Навес детально · Скамья" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/05c85661-0a48-4d83-8a98-ee8d4b3ff7d6.jpg", label: "Двутон · Поле · Летний день" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/252da8df-e7f6-47d1-9c78-156e5cf4cbad.jpg", label: "Двутон · Костёр на поляне · Закат" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/d00c294b-ef89-4d64-9b15-1400299f5836.jpg", label: "Двутон · Озеро · Отражение · Гамак" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/b69f984b-bf01-4419-a3ce-4475cc4845e3.jpg", label: "Двутон · Метель · Ели в снегу" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/2bd0c9ab-a9b5-4825-81fc-7178c921a216.jpg", label: "Двутон · Сакура · Весна" },
-  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/986d2007-b9e8-430e-bc9e-444c3f522f86.jpg", label: "Двутон · Горная долина · Золотая лиственница" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/a07c82cc-6a44-4156-9da2-94fa6fcf4d6f.jpg", label: "Свежеокультуренный участок" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/11711e97-671d-4b4c-84f7-754c4eecd183.jpg", label: "Лесная поляна" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/f6cef449-3577-43c5-b9c5-25e468ce81bd.jpg", label: "Закат" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/d7df6bed-9836-4a47-ae9a-96887f824c19.jpg", label: "Дождь" },
 ];
 
-const INTERIOR_IMAGES: { src: string; label: string }[] = [];
+const INTERIOR_IMAGES: { src: string; label: string }[] = [
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/fcdcb66f-57ec-47c5-9700-86c9d6b94ba6.jpg", label: "Тамбур · Вход" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/e5339fce-2c4d-4f69-8334-92848eaf72d0.jpg", label: "Кухня-гостиная · Окна вдоль правой стены" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/77371525-72f2-433d-a042-554090472afc.jpg", label: "Гостиная · Вечерний свет" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/066b578f-eb0c-4653-9b6e-0235d22bf25e.jpg", label: "Спальня · Торцевое окно" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/6642e0ed-0d24-4c83-bb52-d664fb376d05.jpg", label: "Санузел · Левая стена" },
+  { src: "https://cdn.poehali.dev/projects/556d4070-61bc-4b31-a046-7ee5ce0e5d8a/files/06f2fecc-a1f6-4503-bf1e-5625237fcd46.jpg", label: "Рабочая зона · Боковой свет" },
+];
 
 type Tab = "exterior" | "interior";
 
@@ -80,12 +71,12 @@ export default function Gallery() {
                 border: "none",
                 borderRight: tab === "exterior" ? "var(--border)" : "none",
                 background: activeTab === tab ? "var(--dark)" : "white",
-                color: activeTab === tab ? "white" : tab === "interior" ? "#aaa" : "var(--dark)",
-                cursor: tab === "interior" ? "not-allowed" : "pointer",
+                color: activeTab === tab ? "white" : "var(--dark)",
+                cursor: "pointer",
                 transition: "all 0.15s",
               }}
             >
-              {tab === "exterior" ? "Экстерьер" : "Интерьер · Скоро"}
+              {tab === "exterior" ? "Экстерьер" : "Интерьер"}
             </button>
           ))}
         </div>
